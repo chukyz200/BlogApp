@@ -74,34 +74,6 @@ class HomeScreenFragment : Fragment(R.layout.fragment_home_screen), OnPostClickL
                 }
             }
         }
-
-
-        //LiveData
-//        viewModel.fetchLatestPost().observe(viewLifecycleOwner) { result ->
-//            when (result) {
-//                is Result.Loading -> {
-//                    binding.progressBar.show()
-//                }
-//                is Result.Success -> {
-//                    binding.progressBar.hide()
-//                    if (result.data.isEmpty()) {
-//                        binding.emptyContainer.show()
-//                        return@observe
-//                    } else {
-//                        binding.emptyContainer.hide()
-//                    }
-//                    binding.rvHome.adapter = HomeScreenAdapter(result.data, this)
-//                }
-//                is Result.Failure -> {
-//                    binding.progressBar.hide()
-//                    Toast.makeText(
-//                        requireContext(),
-//                        "Ocurrió un error ${result.exception}",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            }
-//        }
     }
 
     override fun onLikeButtonClick(post: Post, liked: Boolean) {

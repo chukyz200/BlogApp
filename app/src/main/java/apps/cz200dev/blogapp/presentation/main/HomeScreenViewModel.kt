@@ -14,18 +14,6 @@ import java.lang.Exception
 
 class HomeScreenViewModel(private val repo: HomeScreenRepo) : ViewModel() {
 
-    fun fetchLatestPost() = liveData(Dispatchers.IO) {
-        emit(Result.Loading())
-
-        kotlin.runCatching {
-            repo.getLatestPost()
-        }.onSuccess { postList ->
-            emit(postList)
-        }.onFailure {
-            emit(Result.Failure(Exception(it.message)))
-        }
-    }
-
     //StateFlow
     val latestPost: StateFlow<Result<List<Post>>> = flow {
         kotlin.runCatching {
